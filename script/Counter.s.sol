@@ -15,7 +15,7 @@ contract CounterScript is Script {
 
         counter = Counter(
             CREATE3.deployDeterministic(
-                0, abi.encodePacked(type(Counter).creationCode), keccak256(abi.encodePacked("MyCounter"))
+                abi.encodePacked(type(Counter).creationCode), keccak256(abi.encodePacked("salt"))
             )
         );
 
